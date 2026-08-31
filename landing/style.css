@@ -1,0 +1,162 @@
+:root {
+  --background: #ffffff;
+  --accent: #e10600;
+  --text: #111111;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--background);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.shutters {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shutter {
+  position: absolute;
+  top: -10vh;
+  bottom: -10vh;
+  width: 62vw;
+  background: var(--accent);
+  animation-duration: 1.1s;
+  animation-delay: 0.1s;
+  animation-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+  animation-fill-mode: forwards;
+}
+
+.shutter-left {
+  left: -6vw;
+  animation-name: shutter-left-open;
+}
+
+.shutter-right {
+  right: -6vw;
+  animation-name: shutter-right-open;
+}
+
+.landing {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.site-header {
+  width: 100%;
+  height: 68px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: clamp(1.7rem, 3.2vw, 2.8rem);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transform: scaleX(1.01);
+}
+
+.hero-section {
+  padding: 40px 28px 0;
+}
+
+.hero-section p {
+  max-width: 8ch;
+  font-size: clamp(3.8rem, 10vw, 8rem);
+  line-height: 0.92;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.image-area {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 18px;
+  padding: 36px 28px 48px;
+}
+
+.image-card {
+  min-height: 260px;
+  border: 2px solid rgba(225, 6, 0, 0.18);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(225, 6, 0, 0.08), rgba(225, 6, 0, 0.02)),
+    #ffffff;
+}
+
+.image-card-large {
+  min-height: 320px;
+}
+
+.image-card-small {
+  min-height: 320px;
+}
+
+@media (max-width: 900px) {
+  .image-area {
+    grid-template-columns: 1fr;
+  }
+
+  .image-card,
+  .image-card-large,
+  .image-card-small {
+    min-height: 220px;
+  }
+}
+
+@keyframes shutter-left-open {
+  from {
+    left: -6vw;
+  }
+
+  to {
+    left: -62vw;
+  }
+}
+
+@keyframes shutter-right-open {
+  from {
+    right: -6vw;
+  }
+
+  to {
+    right: -62vw;
+  }
+}
