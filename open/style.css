@@ -1,7 +1,8 @@
 :root {
   --background: #ffffff;
   --text: #111111;
-  --accent: #e10600;
+  --honda-red: #cc0000;
+  --accent: var(--honda-red);
 }
 
 * {

@@ -1,6 +1,7 @@
 :root {
   --background: #ffffff;
-  --accent: #e10600;
+  --honda-red: #cc0000;
+  --accent: var(--honda-red);
   --text: #111111;
 }
 
@@ -92,17 +93,83 @@ h1 {
 }
 
 .hero-section {
-  padding: 40px 28px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: calc(100vh - 68px);
+  padding: clamp(36px, 5vw, 64px) clamp(28px, 5vw, 72px) 0;
 }
 
-.hero-section p {
-  max-width: 8ch;
-  font-size: clamp(3.8rem, 10vw, 8rem);
-  line-height: 0.92;
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 0.9vw, 14px);
+  width: min(100%, 900px);
+  font-size: clamp(3.15rem, 5.45vw, 6.25rem);
+  line-height: 0.88;
   font-weight: 900;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.hero-copy > span:not(.line-pair),
+.line-pair > span:not(.brand-stack),
+.brand-stack > span {
+  position: relative;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(0.28em);
+  animation: reveal-copy 0.72s cubic-bezier(0.18, 0.84, 0.25, 1) var(--delay) forwards;
+}
+
+.hero-copy .line-pair {
+  display: flex;
+  align-items: stretch;
+  gap: 0.26em;
+  width: max-content;
+  max-width: 100%;
+}
+
+.hero-copy .brand-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.06em;
+  width: max-content;
+  max-width: 100%;
+}
+
+.hero-copy .line-xl {
+  font-size: 0.98em;
+}
+
+.hero-copy .line-lg {
+  font-size: 0.92em;
+  margin-top: 0.22em;
+}
+
+.hero-copy .line-honda {
+  font-size: 1.48em;
+  line-height: 0.75;
+}
+
+.hero-copy .line-comigo {
+  font-size: 0.64em;
+  line-height: 0.8;
+  margin-top: 0.48em;
+  margin-left: -1.02em;
+}
+
+.honda-badge {
+  display: inline-block;
+  padding: 0 0.12em 0.04em;
+  background: var(--accent);
+  color: #ffffff;
 }
 
 .image-area {
@@ -114,10 +181,10 @@ h1 {
 
 .image-card {
   min-height: 260px;
-  border: 2px solid rgba(225, 6, 0, 0.18);
+  border: 2px solid rgba(204, 0, 0, 0.22);
   border-radius: 24px;
   background:
-    linear-gradient(135deg, rgba(225, 6, 0, 0.08), rgba(225, 6, 0, 0.02)),
+    linear-gradient(135deg, rgba(204, 0, 0, 0.09), rgba(204, 0, 0, 0.02)),
     #ffffff;
 }
 
@@ -129,7 +196,14 @@ h1 {
   min-height: 320px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
+  .hero-copy {
+    max-width: 100%;
+    font-size: clamp(2.5rem, 10vw, 4.7rem);
+    line-height: 0.92;
+    gap: 10px;
+  }
+
   .image-area {
     grid-template-columns: 1fr;
   }
@@ -158,5 +232,17 @@ h1 {
 
   to {
     right: -62vw;
+  }
+}
+
+@keyframes reveal-copy {
+  from {
+    opacity: 0;
+    transform: translateY(0.28em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
