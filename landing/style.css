@@ -192,6 +192,26 @@ h1 {
   transform: translateY(0);
 }
 
+.hero-set-frame {
+  position: absolute;
+  z-index: 2;
+  left: calc(50% - clamp(260px, 28vw, 460px));
+  top: clamp(170px, 21vw, 290px);
+  display: block;
+  width: clamp(145px, 18vw, 255px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(0.28em);
+  animation: reveal-copy 0.72s cubic-bezier(0.18, 0.84, 0.25, 1) var(--delay) forwards;
+}
+
+.hero-set {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scaleY(-1) rotate(-18deg);
+}
+
 .hero-name {
   position: absolute;
   z-index: 4;
@@ -221,6 +241,36 @@ h1 {
   min-height: clamp(360px, 42vw, 560px);
   padding: clamp(42px, 6vw, 78px) clamp(22px, 5vw, 72px);
   background: var(--accent);
+}
+
+.white-band {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;
+  min-height: clamp(42px, 6vw, 72px);
+  padding: 12px 20px;
+  margin-left: calc(50% - 50vw);
+  background: #ffffff;
+}
+
+.white-band-track {
+  display: flex;
+  width: max-content;
+  animation: white-band-marquee 12s linear infinite;
+}
+
+.white-band p {
+  flex: 0 0 auto;
+  min-width: 100vw;
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3.4vw, 3rem);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .lead-form {
@@ -326,6 +376,10 @@ h1 {
   margin-top: 16px;
 }
 
+.lead-description textarea {
+  margin-top: 0;
+}
+
 .lead-form button {
   min-height: 50px;
   margin-top: 18px;
@@ -366,6 +420,12 @@ h1 {
     top: clamp(135px, 38vw, 220px);
     width: clamp(270px, 82vw, 430px);
     height: clamp(290px, 86vw, 455px);
+  }
+
+  .hero-set-frame {
+    left: calc(50% - clamp(170px, 40vw, 250px));
+    top: clamp(205px, 56vw, 305px);
+    width: clamp(105px, 30vw, 160px);
   }
 
   .hero-name {
@@ -443,5 +503,15 @@ h1 {
   to {
     opacity: 1;
     transform: translate(-50%, 0);
+  }
+}
+
+@keyframes white-band-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }
