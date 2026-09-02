@@ -1,42 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Honda Landing</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="shutters" aria-hidden="true">
-    <div class="shutter shutter-left"></div>
-    <div class="shutter shutter-right"></div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Honda Landing</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="shutters" aria-hidden="true">
+      <div class="shutter shutter-left"></div>
+      <div class="shutter shutter-right"></div>
+    </div>
 
-  <main class="landing">
-    <header class="site-header">
-      <h1>Honda</h1>
-    </header>
+    <main class="landing">
+      <header class="site-header">
+        <h1>Honda</h1>
+      </header>
 
-    <section class="hero-section">
-      <p class="hero-copy" aria-label="Viva o sonho de dirigir Honda comigo">
-        <span class="line-xl" style="--delay: 1.25s;">Viva o sonho de</span>
-        <span class="line-pair">
-          <span class="line-lg" style="--delay: 2s;">dirigir</span>
-          <span class="brand-stack">
-            <span class="line-honda" style="--delay: 2.7s;">
-              <span class="honda-badge">Honda</span>
+      <section class="hero-section">
+        <p class="hero-copy" aria-label="Viva o sonho de dirigir Honda comigo">
+          <span class="line-xl" style="--delay: 1.25s">Viva o sonho de</span>
+          <span class="line-pair">
+            <span class="line-lg" style="--delay: 2s">dirigir</span>
+            <span class="brand-stack">
+              <span class="line-honda" style="--delay: 2.7s">
+                <span class="honda-badge">Honda</span>
+              </span>
+              <span class="line-comigo" style="--delay: 3.25s">comigo</span>
             </span>
-            <span class="line-comigo" style="--delay: 3.25s;">comigo</span>
           </span>
+        </p>
+        <span class="hero-man-frame" style="--delay: 3.65s">
+          <img class="hero-man" src="assets/man.webp" alt="" aria-hidden="true" />
         </span>
-      </p>
-    </section>
+        <span class="hero-name" style="--delay: 3.9s">André Leão</span>
+      </section>
 
-    <section class="image-area" aria-label="Area de imagens">
-      <div class="image-card image-card-large"></div>
-      <div class="image-card image-card-small"></div>
-      <div class="image-card image-card-small"></div>
-    </section>
-  </main>
-</body>
+      <section class="red-band" aria-label="Formulário de contato">
+        <form class="lead-form">
+          <div class="lead-form-header">
+            <h2>Fale comigo</h2>
+            <p>Preencha seus dados e conte brevemente qual o seu sonho!</p>
+          </div>
+
+          <div class="lead-form-grid">
+            <label>
+              <span>Nome completo</span>
+              <input
+                type="text"
+                name="nome"
+                autocomplete="name"
+                required
+              />
+            </label>
+
+            <label>
+              <span>Telefone</span>
+              <div class="phone-control">
+                <select name="paisTelefone" aria-label="País do telefone">
+                  <option value="BR" selected>BR +55</option>
+                  <option value="US">US +1</option>
+                  <option value="CA">CA +1</option>
+                  <option value="MX">MX +52</option>
+                  <option value="PT">PT +351</option>
+                  <option value="ES">ES +34</option>
+                  <option value="FR">FR +33</option>
+                  <option value="DE">DE +49</option>
+                  <option value="IT">IT +39</option>
+                  <option value="GB">GB +44</option>
+                  <option value="IE">IE +353</option>
+                  <option value="AR">AR +54</option>
+                  <option value="CL">CL +56</option>
+                  <option value="UY">UY +598</option>
+                  <option value="PY">PY +595</option>
+                  <option value="BO">BO +591</option>
+                  <option value="PE">PE +51</option>
+                  <option value="CO">CO +57</option>
+                  <option value="VE">VE +58</option>
+                  <option value="EC">EC +593</option>
+                  <option value="AU">AU +61</option>
+                  <option value="NZ">NZ +64</option>
+                  <option value="JP">JP +81</option>
+                  <option value="CN">CN +86</option>
+                  <option value="IN">IN +91</option>
+                  <option value="ZA">ZA +27</option>
+                </select>
+                <input
+                  type="tel"
+                  name="telefone"
+                  autocomplete="tel"
+                  inputmode="numeric"
+                  required
+                />
+              </div>
+            </label>
+
+            <label>
+              <span>E-mail <small>(Opcional)</small></span>
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+              />
+            </label>
+
+            <label>
+              <span>Modelo de interesse <small>(Opcional)</small></span>
+              <input type="text" name="modelo" autocomplete="off" />
+            </label>
+          </div>
+
+          <label class="lead-description">
+            <span>Descrição breve <small>(Opcional)</small></span>
+            <textarea
+              name="descricao"
+              rows="4"
+              placeholder="Ex: Quero simular parcelas, tenho interesse em uma Honda Civic..."
+            ></textarea>
+          </label>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>
