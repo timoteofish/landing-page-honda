@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Honda Landing</title>
+    <title>André Leão</title>
+    <link rel="icon" href="assets/A.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -19,25 +20,27 @@
       </header>
 
       <section class="hero-section">
-        <p class="hero-copy" aria-label="Viva o sonho de dirigir Honda comigo">
-          <span class="line-xl" style="--delay: 1.25s">Viva o sonho de</span>
-          <span class="line-pair">
-            <span class="line-lg" style="--delay: 2s">dirigir</span>
-            <span class="brand-stack">
-              <span class="line-honda" style="--delay: 2.7s">
-                <span class="honda-badge">Honda</span>
+        <div class="hero-stage">
+          <p class="hero-copy" aria-label="Viva o sonho de dirigir Honda comigo">
+            <span class="line-xl" style="--delay: 1.25s">Viva o sonho de</span>
+            <span class="line-pair">
+              <span class="line-lg" style="--delay: 2s">dirigir</span>
+              <span class="brand-stack">
+                <span class="line-honda" style="--delay: 2.7s">
+                  <span class="honda-badge">Honda</span>
+                </span>
+                <span class="line-comigo" style="--delay: 3.25s">comigo</span>
               </span>
-              <span class="line-comigo" style="--delay: 3.25s">comigo</span>
             </span>
+          </p>
+          <span class="hero-man-frame" style="--delay: 3.65s">
+            <img class="hero-man" src="assets/andre.webp" alt="" aria-hidden="true" />
           </span>
-        </p>
-        <span class="hero-man-frame" style="--delay: 3.65s">
-          <img class="hero-man" src="assets/man.webp" alt="" aria-hidden="true" />
-        </span>
-        <span class="hero-set-frame" style="--delay: 3.65s">
-          <img class="hero-set" src="assets/set.webp" alt="" aria-hidden="true" />
-        </span>
-        <span class="hero-name" style="--delay: 3.9s">André Leão</span>
+          <span class="hero-set-frame" style="--delay: 3.65s">
+            <img class="hero-set" src="assets/set.webp" alt="" aria-hidden="true" />
+          </span>
+          <span class="hero-name" style="--delay: 3.9s">André Leão</span>
+        </div>
       </section>
 
       <section class="red-band" aria-label="Formulário de contato">
@@ -136,7 +139,7 @@
             <textarea
               name="descricao"
               rows="4"
-              placeholder="Ex: Quero simular parcelas, tenho interesse em uma Honda..."
+              placeholder="Ex: Quero simular parcelas, tenho interesse..."
             ></textarea>
           </label>
 
